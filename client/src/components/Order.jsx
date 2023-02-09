@@ -27,6 +27,7 @@ const Order = ({
     const getAllOrders = async () => {
       const res = await axios.get("http://localhost:3001/orders")
       setOrders(res.data.orders)
+      console.log(res.data.orders)
     }
     getAllOrders()
   }, [])
@@ -99,6 +100,22 @@ const Order = ({
           Place Order
         </button>
       </form>
+      <div className="display-orders">
+        {orders.map((order) => (
+          <div className="order-card">
+            <div className="info">
+              <h3>
+                {order.firstname} {order.lastname}
+              </h3>
+              <h4>{order.address}</h4>
+              <h4>{order.phone}</h4>
+              <h4>{order.products.length} Items</h4>
+            </div>
+            <button className="button">Edit Order</button>
+            <button className="button">Delete Order</button>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
