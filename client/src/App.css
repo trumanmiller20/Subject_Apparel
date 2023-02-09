@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+.display-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product-card {
+  height: auto;
+  width: 300px;
+  background-color:rgb(0, 0, 0);
+  margin-bottom: 20px;
+  border-radius: 10px;;
+}
+
+.product-img img {
+  height: 150px;
+  width: 90%;
+  margin: 15px 0 0 0;
+  border-radius: 10px;
+}
+
+.add-order {
+  margin: 8px;
+  padding: 10px;
+  border-radius: 15px;;
+}
+
+.add-order:hover {
+  opacity: 0.8;
+}
+
+.info {
+  color: white;
+}
+
+h3 {
+  margin: 0;
+}
