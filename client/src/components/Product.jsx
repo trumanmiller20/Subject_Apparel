@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Product = (props) => {
   return (
     <div className="product-card">
@@ -8,7 +10,12 @@ const Product = (props) => {
         <h3>
           {props.name} ${props.price}
         </h3>
-        <button className="add-order">Add to Order</button>
+        <button
+          className="button"
+          onClick={() => props.addToCart(props.product)}
+        >
+          Add to Order
+        </button>
       </div>
     </div>
   )

@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
 .display-products {
   display: flex;
   flex-wrap: wrap;
@@ -23,18 +28,23 @@
   border-radius: 10px;
 }
 
-.add-order {
+.button {
   margin: 8px;
   padding: 10px;
-  border-radius: 15px;;
+  border-radius: 15px;
 }
 
-.add-order:hover {
+.button:hover {
   opacity: 0.8;
 }
 
 .info {
   color: white;
+  padding: 10px;
+}
+
+.form-input {
+  margin: 10px;
 }
 
 h3 {

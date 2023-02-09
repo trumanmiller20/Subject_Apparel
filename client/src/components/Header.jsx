@@ -2,11 +2,13 @@ import { NavLink } from "react-router-dom"
 
 const Header = () => {
   return (
-    <header>
-      <nav>
+    <nav className="navbar">
+      <h3>SUBJECT</h3>
+      <div>
         <NavLink to="/">HOME</NavLink>
-      </nav>
-    </header>
+        <NavLink to="/order">ORDER</NavLink>
+      </div>
+    </nav>
   )
 }
 
