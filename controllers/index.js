@@ -2,7 +2,7 @@ const { Order, Product } = require("../models")
 
 const createOrder = async (req, res) => {
   try {
-    const order = await new Order(req.body)
+    const order = new Order(req.body)
     await order.save()
     return res.status(201).json({
       order,

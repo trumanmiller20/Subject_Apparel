@@ -8,6 +8,8 @@ const Order = ({
   newOrder,
   setCart,
   setNewOrder,
+  orders,
+  setOrders,
 }) => {
   const handleSubmit = (e) => {
     addOrder(e)
@@ -20,6 +22,14 @@ const Order = ({
     delProduct = delProduct.filter((item) => item === e.target.id)
     setNewOrder({ ...newOrder, products: delProduct })
   }
+
+  useEffect(() => {
+    const getAllOrders = async () => {
+      const res = await axios.get("http://localhost:3001/orders")
+      setOrders(res.data.orders)
+    }
+    getAllOrders()
+  }, [])
 
   return (
     <div className="order-form">
@@ -85,7 +95,9 @@ const Order = ({
             value={newOrder.phone}
           />
         </div>
-        <button type="submit">Place Order</button>
+        <button type="submit" onClick={(e) => addOrder(e)}>
+          Place Order
+        </button>
       </form>
     </div>
   )

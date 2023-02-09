@@ -21,8 +21,8 @@ const App = () => {
 
   const addOrder = async (e) => {
     e.preventDefault()
-
-    const currentOrders = orders
+    axios.post("http://localhost:3001/order", newOrder)
+    let currentOrders = orders
     const createdOrder = {
       ...newOrder,
     }
@@ -51,7 +51,6 @@ const App = () => {
     productArr.push(product._id)
     setNewOrder({ ...newOrder, products: productArr })
   }
-  console.log(newOrder)
 
   useEffect(() => {
     const getProducts = async () => {
@@ -59,14 +58,6 @@ const App = () => {
       setProducts(res.data.products)
     }
     getProducts()
-  }, [])
-
-  useEffect(() => {
-    const getAllOrders = async () => {
-      const res = await axios.get("http://localhost:3001/orders")
-      setOrders(res.data.orders)
-    }
-    getAllOrders()
   }, [])
 
   return (
@@ -90,6 +81,8 @@ const App = () => {
                 cart={cart}
                 setCart={setCart}
                 setNewOrder={setNewOrder}
+                orders={orders}
+                setOrders={setOrders}
               />
             }
           />
