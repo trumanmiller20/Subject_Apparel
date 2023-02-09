@@ -3,7 +3,7 @@
 ## **_Table of Contents:_**
 
 1. Motivation
-2. Game Description
+2. Project Description
 3. Technologies Used
 4. Future Updates
 5. Credits
