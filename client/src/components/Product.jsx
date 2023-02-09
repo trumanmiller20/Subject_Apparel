@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 const Product = (props) => {
   return (
     <div className="product-card">

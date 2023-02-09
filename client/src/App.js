@@ -16,17 +16,26 @@ const App = () => {
     lastname: "",
     address: "",
     phone: "",
+    products: [],
   })
 
-  const addOrder = (e) => {
+  const addOrder = async (e) => {
     e.preventDefault()
+
     const currentOrders = orders
     const createdOrder = {
       ...newOrder,
     }
     currentOrders.push(createdOrder)
     setOrders(currentOrders)
-    setNewOrder({ firstname: "", lastname: "", address: "", phone: "" })
+    setNewOrder({
+      firstname: "",
+      lastname: "",
+      address: "",
+      phone: "",
+      products: [],
+    })
+    setCart([])
   }
 
   const handleChange = (e) => {
@@ -37,7 +46,12 @@ const App = () => {
     let newCart = cart
     newCart.push(product)
     setCart(newCart)
+    let productArr = newOrder.products
+    console.log(productArr)
+    productArr.push(product._id)
+    setNewOrder({ ...newOrder, products: productArr })
   }
+  console.log(newOrder)
 
   useEffect(() => {
     const getProducts = async () => {
@@ -75,6 +89,7 @@ const App = () => {
                 newOrder={newOrder}
                 cart={cart}
                 setCart={setCart}
+                setNewOrder={setNewOrder}
               />
             }
           />

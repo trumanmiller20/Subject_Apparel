@@ -1,20 +1,24 @@
-import { useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import axios from "axios"
 
-const Order = ({ cart, handleChange, addOrder, newOrder, setCart }) => {
-  const [product, setProduct] = useState("")
-  let navigate = useNavigate()
-
-  let { id } = useParams()
-
+const Order = ({
+  cart,
+  handleChange,
+  addOrder,
+  newOrder,
+  setCart,
+  setNewOrder,
+}) => {
   const handleSubmit = (e) => {
     addOrder(e)
-    navigate("/orders")
   }
 
   const deleteFromCart = (e) => {
-    const newCart = cart.filter((item) => item.name !== e.target.id)
+    const newCart = cart.filter((item) => item._id !== e.target.id)
     setCart(newCart)
+    let delProduct = newOrder.products
+    delProduct = delProduct.filter((item) => item === e.target.id)
+    setNewOrder({ ...newOrder, products: delProduct })
   }
 
   return (
@@ -32,7 +36,7 @@ const Order = ({ cart, handleChange, addOrder, newOrder, setCart }) => {
             </div>
             <button
               className="button"
-              id={product.name}
+              id={product._id}
               onClick={(e) => deleteFromCart(e)}
             >
               Delete Item
