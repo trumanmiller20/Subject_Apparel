@@ -12,7 +12,7 @@ const Product = (props) => {
           className="button"
           onClick={() => props.addToCart(props.product)}
         >
-          Add to Order
+          Add to Cart
         </button>
       </div>
     </div>
