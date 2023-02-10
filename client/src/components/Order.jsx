@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import axios from "axios"
 
 const Order = ({
@@ -23,15 +22,16 @@ const Order = ({
     setNewOrder({ ...newOrder, products: delProduct })
   }
 
-  useEffect(() => {
-    const getAllOrders = async () => {
-      const res = await axios.get("http://localhost:3001/orders")
-      setOrders(res.data.orders)
-    }
-    getAllOrders()
-  }, [])
+  const cancelOrder = async (e, orderIndex) => {
+    let currentOrders = [...orders]
+    currentOrders.splice(orderIndex, 1)
+    setOrders(currentOrders)
+    await axios.delete(`http://localhost:3001/order/${e.target.id}`)
+  }
 
-  const deleteOrder = async (e) => {}
+  const editOrder = async (e) => {
+    await axios.put(`http://localhost:3001/order/${e.target.id}`)
+  }
 
   return (
     <div className="order-form">
@@ -49,7 +49,7 @@ const Order = ({
             <button
               className="button"
               id={product._id}
-              onClick={(e) => deleteFromCart(e)}
+              onClick={deleteFromCart}
             >
               Delete Item
             </button>
@@ -97,12 +97,10 @@ const Order = ({
             value={newOrder.phone}
           />
         </div>
-        <button type="submit" onClick={(e) => addOrder(e)}>
-          Place Order
-        </button>
+        <button type="submit">Place Order</button>
       </form>
       <div className="display-orders">
-        {orders?.map((order) => (
+        {orders?.map((order, index) => (
           <div className="order-card">
             <div className="info">
               <h3>
@@ -110,10 +108,22 @@ const Order = ({
               </h3>
               <h4>{order.address}</h4>
               <h4>{order.phone}</h4>
-              <h4>({order.products.length})</h4>
+              <h4>{order.products.length} Items</h4>
             </div>
-            <button className="button">Edit Order</button>
-            <button className="button">Delete Order</button>
+            <button
+              className="button"
+              id={order._id}
+              onClick={() => editOrder(index)}
+            >
+              Edit Order
+            </button>
+            <button
+              className="button"
+              id={order._id}
+              onClick={(e) => cancelOrder(e, index)}
+            >
+              Cancel Order
+            </button>
           </div>
         ))}
       </div>

@@ -3,11 +3,13 @@ import axios from "axios"
 import Header from "./components/Header"
 import Home from "./components/Home"
 import Order from "./components/Order"
-import OrderDetails from "./components/OrderDetails"
-import { Route, Routes } from "react-router-dom"
+import OrderSuccess from "./components/OrderSuccess"
+import { Route, Routes, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 const App = () => {
+  let navigate = useNavigate()
+
   const [products, setProducts] = useState([])
   const [orders, setOrders] = useState([])
   const [cart, setCart] = useState([])
@@ -21,12 +23,9 @@ const App = () => {
 
   const addOrder = async (e) => {
     e.preventDefault()
-    axios.post("http://localhost:3001/order", newOrder)
+    let response = await axios.post("http://localhost:3001/order", newOrder)
     let currentOrders = orders
-    const createdOrder = {
-      ...newOrder,
-    }
-    currentOrders.push(createdOrder)
+    currentOrders.push(response.data.order)
     setOrders(currentOrders)
     setNewOrder({
       firstname: "",
@@ -36,6 +35,7 @@ const App = () => {
       products: [],
     })
     setCart([])
+    navigate("/success")
   }
 
   const handleChange = (e) => {
@@ -47,7 +47,6 @@ const App = () => {
     newCart.push(product)
     setCart(newCart)
     let productArr = newOrder.products
-    console.log(productArr)
     productArr.push(product._id)
     setNewOrder({ ...newOrder, products: productArr })
   }
@@ -58,6 +57,11 @@ const App = () => {
       setProducts(res.data.products)
     }
     getProducts()
+    const getAllOrders = async () => {
+      const res = await axios.get("http://localhost:3001/orders")
+      setOrders(res.data.orders)
+    }
+    getAllOrders()
   }, [])
 
   return (
@@ -86,6 +90,7 @@ const App = () => {
               />
             }
           />
+          <Route path="/success" element={<OrderSuccess />} />
         </Routes>
       </main>
     </div>
