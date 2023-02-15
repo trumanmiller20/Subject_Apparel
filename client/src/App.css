@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
 
 
 .App {
   text-align: center;
   background: url("https://images.hdqwalls.com/download/landscape-sunset-minimal-4k-2y-2932x2932.jpg");
   background-size: cover;
-  font-family: 'Questrial';
+  font-family: 'Kanit';
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: white;
   background-color: rgba(0, 0, 0);
   margin-bottom: 20px;
@@ -20,6 +21,14 @@
 .navlink {
   text-decoration: none;
   font-weight: bold;
+  color: white;
+}
+
+.navlinks {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .display-products {
@@ -47,13 +56,18 @@
   margin: 8px;
   padding: 10px;
   border-radius: 15px;
-  font-family: 'Questrial';
+  font-family: 'Kanit';
   background-color: #495583;
   color: white;
 }
 
 .button:hover {
-  opacity: 0.8;
+  background-color: #394266;
+}
+
+.button:active {
+  background-color: #394266;
+  transform: translateY(4px);
 }
 
 .info {
@@ -63,6 +77,12 @@
 
 .form-input {
   margin: 10px;
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: 0.05em;
+  margin-left: 15px;;
 }
 
 h3 {
