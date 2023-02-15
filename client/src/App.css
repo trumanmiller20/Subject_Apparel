@@ -1,10 +1,16 @@
 .App {
   text-align: center;
+  background: url("https://wallpaperaccess.com/full/99789.jpg");
+  background-size: cover;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
+  color: white;
+  background-color: black;
+  margin-bottom: 20px;
+  height: 10vh;
 }
 
 .display-products {
