@@ -18,7 +18,7 @@ I was motivated to create this MERN stack application to generate a model for a 
 
 ### **_Description:_**
 
-This MERN stack application is a simplified e-commerce platform that enables a user to browse, order, or review SUBJECT brand products.
+This MERN stack application is a simplified e-commerce platform that enables a user to browse and order SUBJECT brand apparel products.
 
 ---
 
