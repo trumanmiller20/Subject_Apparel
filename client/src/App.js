@@ -52,16 +52,18 @@ const App = () => {
     setNewOrder({ ...newOrder, products: productArr })
   }
 
+  const getAllOrders = async () => {
+    const res = await axios.get("http://localhost:3001/orders")
+    setOrders(res.data.orders)
+  }
+
   useEffect(() => {
     const getProducts = async () => {
       const res = await axios.get("http://localhost:3001/products")
       setProducts(res.data.products)
     }
     getProducts()
-    const getAllOrders = async () => {
-      const res = await axios.get("http://localhost:3001/orders")
-      setOrders(res.data.orders)
-    }
+
     getAllOrders()
   }, [])
 
@@ -88,11 +90,15 @@ const App = () => {
                 setNewOrder={setNewOrder}
                 orders={orders}
                 setOrders={setOrders}
+                getAllOrders={getAllOrders}
               />
             }
           />
           <Route path="/success" element={<OrderSuccess />} />
-          <Route path="/edit" element={<EditOrder />} />
+          <Route
+            path="/edit/:id/:index"
+            element={<EditOrder orders={orders} />}
+          />
         </Routes>
       </main>
     </div>

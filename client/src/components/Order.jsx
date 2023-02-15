@@ -1,4 +1,5 @@
 import axios from "axios"
+import { useEffect } from "react"
 
 const Order = ({
   cart,
@@ -9,10 +10,15 @@ const Order = ({
   setNewOrder,
   orders,
   setOrders,
+  getAllOrders,
 }) => {
   const handleSubmit = (e) => {
     addOrder(e)
   }
+
+  useEffect(() => {
+    getAllOrders()
+  }, [])
 
   const deleteFromCart = (e) => {
     const newCart = cart.filter((item) => item._id !== e.target.id)
@@ -106,12 +112,8 @@ const Order = ({
               <h4>{order.phone}</h4>
               <h4>{order.products.length} Items</h4>
             </div>
-            <a href="/edit">
-              <button
-                className="button"
-                // id={order._id}
-                // onClick={() => editOrder(index)}
-              >
+            <a href={`/edit/${order._id}/${index}`}>
+              <button className="button" id={order._id}>
                 Edit Order
               </button>
             </a>

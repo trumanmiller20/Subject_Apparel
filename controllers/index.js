@@ -41,7 +41,7 @@ const getAllProducts = async (req, res) => {
 const getOrderById = async (req, res) => {
   try {
     const { id } = req.params
-    const order = await Order.findById(id)
+    const order = await Order.findById(id).populate("products")
     if (order) {
       return res.status(200).json({ order })
     }
