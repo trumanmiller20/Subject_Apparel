@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
 import Product from "./Product"
-import Order from "./Order"
 
 const Home = ({ products, addToCart }) => {
   return (

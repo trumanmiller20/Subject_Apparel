@@ -3,6 +3,7 @@ import axios from "axios"
 import Header from "./components/Header"
 import Home from "./components/Home"
 import Order from "./components/Order"
+import EditOrder from "./components/EditOrder"
 import OrderSuccess from "./components/OrderSuccess"
 import { Route, Routes, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
@@ -91,6 +92,7 @@ const App = () => {
             }
           />
           <Route path="/success" element={<OrderSuccess />} />
+          <Route path="/edit" element={<EditOrder />} />
         </Routes>
       </main>
     </div>

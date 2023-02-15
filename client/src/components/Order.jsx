@@ -29,10 +29,6 @@ const Order = ({
     await axios.delete(`http://localhost:3001/order/${e.target.id}`)
   }
 
-  const editOrder = async (e) => {
-    await axios.put(`http://localhost:3001/order/${e.target.id}`)
-  }
-
   return (
     <div className="order-form">
       <div className="display-products">
@@ -110,13 +106,15 @@ const Order = ({
               <h4>{order.phone}</h4>
               <h4>{order.products.length} Items</h4>
             </div>
-            <button
-              className="button"
-              id={order._id}
-              onClick={() => editOrder(index)}
-            >
-              Edit Order
-            </button>
+            <a href="/edit">
+              <button
+                className="button"
+                // id={order._id}
+                // onClick={() => editOrder(index)}
+              >
+                Edit Order
+              </button>
+            </a>
             <button
               className="button"
               id={order._id}
