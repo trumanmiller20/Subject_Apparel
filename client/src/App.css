@@ -3,7 +3,8 @@
 
 .App {
   text-align: center;
-  background: url("https://free4kwallpapers.com/uploads/originals/2015/08/25/website-background.jpg");
+  /*background: url("https://free4kwallpapers.com/uploads/originals/2015/08/25/website-background.jpg");*/
+  background: url("https://wallpapercave.com/wp/wp2747987.jpg");
   min-height: 100vh;
   background-size: cover;
   font-family: 'Source Sans Pro';
@@ -54,7 +55,6 @@
   width: 300px;
   background-color: rgb(0, 0, 0);
   margin-bottom: 20px;
-  border-radius: 10px;
   box-shadow: -4px 4px rgba(0, 0, 0, 0.3);
   border-color: black;
 }
@@ -129,7 +129,6 @@ h3 {
   width: 300px;
   background-color: rgb(0, 0, 0);
   margin-bottom: 20px;
-  border-radius: 10px;;
   box-shadow: -4px 4px rgba(0, 0, 0, 0.3);
 }
 
