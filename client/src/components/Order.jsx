@@ -103,6 +103,7 @@ const Order = ({
           Place Order
         </button>
       </form>
+      <h1>Orders</h1>
       <div className="display-orders">
         {orders?.map((order, index) => (
           <div className="order-card">
