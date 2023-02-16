@@ -46,3 +46,7 @@ This MERN stack application is a simplified e-commerce platform that enables a u
 ### **_Credits:_**
 
 - Trello
+- MDN Web Docs
+- W3 Schools
+- Geeks for Geeks
+- Google Fonts
