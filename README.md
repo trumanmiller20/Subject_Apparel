@@ -1,5 +1,7 @@
 # **SUBJECT APPAREL**
 
+![Image](App-Screenshot.png)
+
 ## **_Table of Contents:_**
 
 1. Motivation
