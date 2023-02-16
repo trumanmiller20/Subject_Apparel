@@ -3,7 +3,8 @@
 
 .App {
   text-align: center;
-  background: url("https://images.hdqwalls.com/download/landscape-sunset-minimal-4k-2y-2932x2932.jpg");
+  background: url("https://free4kwallpapers.com/uploads/originals/2015/08/25/website-background.jpg");
+  min-height: 100vh;
   background-size: cover;
   font-family: 'Kanit';
 }
