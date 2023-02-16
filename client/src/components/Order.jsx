@@ -100,6 +100,7 @@ const Order = ({
             id="phone"
             onChange={handleChange}
             value={newOrder.phone}
+            placeholder="Your phone number"
           />
         </div>
         <button type="submit" className="button" id="place-order">
