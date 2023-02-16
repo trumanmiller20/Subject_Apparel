@@ -26,6 +26,10 @@
   color: white;
 }
 
+.navlink:hover {
+  color:#222535;
+}
+
 .navlinks {
   width: 40%;
   display: flex;
@@ -73,7 +77,7 @@
 }
 
 .button:active {
-  background-color: #161822;
+  background-color: #12141b;
   transform: translateY(4px);
 }
 
