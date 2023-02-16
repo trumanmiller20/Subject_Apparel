@@ -78,6 +78,7 @@ const Order = ({
             id="lastname"
             onChange={handleChange}
             value={newOrder.lastname}
+            placeholder="Your last name"
           />
         </div>
         <div className="form-input">
