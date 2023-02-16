@@ -89,6 +89,7 @@ const Order = ({
             id="address"
             onChange={handleChange}
             value={newOrder.address}
+            placeholder="Delivery address"
           />
         </div>
         <div className="form-input">
