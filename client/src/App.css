@@ -27,7 +27,11 @@
 }
 
 .navlink:hover {
-  color:#222535;
+  color: #222535;
+}
+
+.navlink:active {
+  font-size: 25px;
 }
 
 .navlinks {
