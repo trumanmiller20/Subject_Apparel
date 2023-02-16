@@ -76,7 +76,9 @@ const EditOrder = ({ orders }) => {
           value={edit.phone}
         />
       </div>
-      <button type="submit">Submit Changes</button>
+      <button type="submit" className="button" id="submit-change">
+        Submit Changes
+      </button>
     </form>
   )
 }
