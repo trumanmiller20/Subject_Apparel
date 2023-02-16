@@ -36,6 +36,11 @@ This MERN stack application is a simplified e-commerce platform that enables a u
 
 ### **_Future Updates_**
 
+- Add User Authentication
+- Add a payment model
+- Incorporate larger product database
+- Build up component hierarchy further to handle more specific cases
+
 ---
 
 ### **_Credits:_**
