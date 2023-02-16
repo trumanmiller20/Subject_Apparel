@@ -104,10 +104,10 @@ input {
   margin: 10px;
 }
 
-h1 {
+.navbar h1 {
   font-size: 40px;
   letter-spacing: 0.05em;
-  margin-left: 15px;;
+  margin-left: 15px;
 }
 
 h3 {
@@ -128,4 +128,8 @@ h3 {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 15px;
+}
+
+label {
+  color: white;
 }
