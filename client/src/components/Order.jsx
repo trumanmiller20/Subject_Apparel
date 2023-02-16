@@ -99,7 +99,9 @@ const Order = ({
             value={newOrder.phone}
           />
         </div>
-        <button type="submit">Place Order</button>
+        <button type="submit" className="button">
+          Place Order
+        </button>
       </form>
       <div className="display-orders">
         {orders?.map((order, index) => (
