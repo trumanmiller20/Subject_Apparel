@@ -60,18 +60,23 @@
   margin: 8px;
   padding: 10px;
   border-radius: 15px;
+  border-width: 0;
   font-family: 'Kanit';
-  background-color: #495583;
+  background-color: #222535;
   color: white;
 }
 
 .button:hover {
-  background-color: #394266;
+  background-color: #161822;
 }
 
 .button:active {
-  background-color: #394266;
+  background-color: #161822;
   transform: translateY(4px);
+}
+
+#place-order {
+  width: 175px;
 }
 
 .info {
@@ -99,6 +104,7 @@ h3 {
   background-color: rgba(0, 0, 0);
   margin-bottom: 20px;
   border-radius: 10px;;
+  box-shadow: -8px 4px rgba(0, 0, 0, 0.45);
 }
 
 .display-orders {
